@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- set character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- responsive design for mobile devices -->
+    <title>welcome</title>
+    <!-- title of the page -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- link to external stylesheet -->
+  </head>
+  <body>
+    <div class="card" style="border-radius: 12rem; margin-top: 5rem">
+      <!-- card container with rounded corners -->
+      <h2 class="assignment-title">
+        assignment-3 - <u>basil moyikkal</u> - c0908488
+        <!-- assignment info -->
+      </h2>
+    </div>
+    <h2 class="main-title">WELCOME</h2>
+    <!-- main title for the welcome page -->
+
+    <div class="card">
+      <!-- card for the welcome message -->
+      <p class="welcome-message" style="font-size: 3rem; text-align: center">
+        <!-- welcome message container -->
+        <strong id="welcome-message"></strong> 👋
+        <!-- dynamic welcome message -->
+      </p>
+      <p class="sub-message" style="font-size: 1.5rem; text-align: center">
+        <!-- subtitle for additional message -->
+        welcome aboard! 🎉
+      </p>
+      <div style="text-align: center; margin-top: 2rem">
+        <!-- container for logout button -->
+        <a href="/" class="submit-button">logout</a>
+        <!-- link to logout -->
+      </div>
+    </div>
+
+    <script>
+      // get username from url
+      const params = new URLSearchParams(window.location.search); // create an object for url parameters
+      const user = params.get("user"); // get user parameter from url
+
+      // display welcome message
+      const welcomeMessage = document.getElementById("welcome-message"); // get welcome message element
+      if (user) {
+        welcomeMessage.textContent = `hi, ${user}`; // set welcome message with username
+      }
+    </script>
+    <div class="footer-text">made with 🤍 by bazil⚡</div>
+    <!-- footer text -->
+  </body>
+</html>

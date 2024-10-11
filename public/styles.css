@@ -1,0 +1,167 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    /* Center text */
+}
+
+/* Main title styles */
+.main-title {
+    font-size: 11rem;
+    /* Set to an even larger size */
+    color: rgba(255, 166, 0, 0.574);
+    /* Orange color with transparency */
+    position: absolute;
+    /* Position it outside the card */
+    top: 50%;
+    /* Center it vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Adjust for true center */
+    z-index: -1;
+    /* Keep it behind other content */
+}
+
+/* Card container styles */
+.card {
+    max-width: 500px;
+    /* Increase card width */
+    margin: 20px auto;
+    /* Center and add vertical spacing */
+    padding: 30px;
+    /* Increase padding */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Input field styles */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(162, 162, 162, 0.244);
+    color: #ffffff;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.input-field::placeholder {
+    color: rgb(247, 200, 135);
+}
+
+/* Submit button styles */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff7c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #ff9d00;
+}
+
+/* Register link styles */
+.register-link {
+    color: #ff9d00;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+    color: rgb(252, 71, 71);
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Add padding to the paragraph above the link */
+.register-login-text {
+    padding-top: 1rem;
+}
+
+
+
+.success-message {
+    position: fixed;
+    /* Keep it fixed to the viewport */
+    bottom: 20px;
+    /* Position it near the bottom */
+    left: 50%;
+    /* Center it horizontally */
+    transform: translateX(-50%);
+    /* Centering adjustment */
+    color: rgba(255, 255, 255, 0.923);
+    font-size: 20px;
+    /* Increase font size */
+    background: rgba(0, 0, 0, 0.5);
+    /* Background with transparency */
+    padding: 15px;
+    /* Increase padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    backdrop-filter: blur(5px);
+    /* Blurred background */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s;
+    /* Animation for exit */
+    z-index: 1000;
+    /* Ensure it appears above other content */
+    display: none;
+    /* Initially hidden */
+}
+
+/* Show success message by moving it into view */
+.success-message.visible {
+    display: block;
+    /* Ensure it is displayed */
+    animation: slideIn 0.5s forwards;
+    /* Apply entrance animation */
+}
+
+.footer-text {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.923);
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- set character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- responsive design for mobile devices -->
+    <title>register</title>
+    <!-- title of the page -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- link to external stylesheet -->
+  </head>
+  <body>
+    <div class="success-message" id="success-message">
+      <!-- container for success message -->
+      🎉 user successfully registered! 🎉
+      <!-- success message content -->
+    </div>
+    <div class="card" style="border-radius: 12rem; margin-top: 5rem">
+      <h2 class="assignment-title">
+        assignment 3 - <u>basil moyikkal</u> - c0908488
+        <!-- assignment info -->
+      </h2>
+    </div>
+    <h2 class="main-title">REGISTER</h2>
+    <!-- main title for the registration page -->
+
+    <!-- success message container -->
+    <div class="card">
+      <h2>register</h2>
+      <!-- registration section title -->
+
+      <!-- error message container -->
+      <div class="error-message" id="error-message" style="display: none"></div>
+      <!-- error message placeholder -->
+
+      <form action="/register" method="POST">
+        <!-- form for registration submission -->
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          class="input-field"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          class="input-field"
+          required
+        />
+        <button class="submit-button" type="submit">register</button>
+        <!-- submit button for registration -->
+      </form>
+      <p class="register-login-text">
+        already registered?
+        <!-- prompt for users to log in if already registered -->
+        <a href="/" class="register-link">login here</a>
+        <!-- link to login page -->
+      </p>
+    </div>
+
+    <script>
+      // get url parameters
+      const params = new URLSearchParams(window.location.search); // create an object for url parameters
+      const error = params.get("error"); // get error parameter from url
+      const success = params.get("success"); // get success parameter from url
+
+      // show error message if any
+      const errorMessage = document.getElementById("error-message"); // get error message element
+      if (error) {
+        if (error === "exists") {
+          errorMessage.textContent = "username already exists!"; // set error message for existing username
+        } else if (error === "fields") {
+          errorMessage.textContent = "please fill in all fields!"; // set error message for empty fields
+        }
+        errorMessage.style.display = "block"; // display the error message
+      }
+
+      // show success message if registered successfully
+      const successMessage = document.getElementById("success-message"); // get success message element
+      if (success) {
+        successMessage.style.display = "block"; // make it visible
+        successMessage.classList.add("visible"); // add class to trigger entrance animation
+        setTimeout(() => {
+          successMessage.classList.remove("visible"); // start exit animation
+          setTimeout(() => {
+            successMessage.style.display = "none"; // hide after the animation
+          }, 500); // wait for the exit animation to finish before hiding
+        }, 5000); // keep visible for 5 seconds
+      } else {
+        successMessage.style.display = "none"; // ensure it's hidden if no success
+      }
+    </script>
+    <div class="footer-text">made with 🤍 by bazil⚡</div>
+    <!-- footer text -->
+  </body>
+</html>

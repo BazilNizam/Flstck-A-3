@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- set character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- responsive design for mobile devices -->
+    <title>Login</title>
+    <!-- title of the page -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- link to external stylesheet -->
+  </head>
+  <body>
+    <div class="card" style="border-radius: 12rem; margin-top: 5rem">
+      <h2 class="assignment-title">
+        assignment - 3 - <u>basil moyikkal</u> - c0908488
+        <!-- assignment info -->
+      </h2>
+    </div>
+
+    <h2 class="main-title">LOGIN</h2>
+    <!-- main title for the login page -->
+
+    <!-- added title outside the card -->
+    <div class="card">
+      <h2>login</h2>
+      <!-- login section title -->
+      <form action="/login" method="POST">
+        <!-- form for login submission -->
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          class="input-field"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          class="input-field"
+          required
+        />
+        <button type="submit" class="submit-button">login</button>
+        <!-- submit button for login -->
+      </form>
+      <p class="error-message" id="error-message" style="display: none"></p>
+      <!-- error message placeholder -->
+      <p class="register-login-text">
+        not registered? <a href="/register" class="register-link">register</a>
+        <!-- link to registration page -->
+      </p>
+    </div>
+
+    <script>
+      // get url parameters
+      const params = new URLSearchParams(window.location.search); // create an object for URL parameters
+      const error = params.get("error"); // get error parameter from URL
+
+      // show error message if any
+      const errorMessage = document.getElementById("error-message"); // get error message element
+      if (error) {
+        if (error === "invalid") {
+          errorMessage.textContent = "invalid username or password!"; // set error message for invalid login
+        } else if (error === "fields") {
+          errorMessage.textContent = "please fill in all fields!"; // set error message for empty fields
+        }
+        errorMessage.style.display = "block"; // display the error message
+      }
+    </script>
+
+    <div class="footer-text">made with 🤍 by bazil⚡</div>
+    <!-- footer text -->
+  </body>
+</html>
